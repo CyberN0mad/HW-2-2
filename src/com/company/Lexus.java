@@ -1,12 +1,21 @@
 package com.company;
 
-public class Lexus extends Car implements Drawable {
-    public Lexus(Engine engine, Wheel wheel) {
-        super(engine, wheel, "Lexus430");
+public class Lexus extends Car implements Printable {
+    private String transmission;
+
+    public Lexus(int year, String model, String transmission) {
+        super(year, model);
+        this.transmission = transmission;
+    }
+
+    public String getTransmission() {
+        return transmission;
     }
 
     @Override
-    public String draw() {
-        return "\uD83D\uDE99";
+    public void print() {
+        System.out.println("Year : " + getYear() +
+                "Model : " + getModel() +
+                "Transmission: " + getTransmission ());
     }
 }

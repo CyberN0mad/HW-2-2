@@ -1,45 +1,20 @@
 package com.company;
 
-abstract class Car {
-    private Engine engine;
-    private Wheel wheel;
-    private String carName;
+public class Car {
+    private int year;
+    private String model;
 
-    public Car(Engine engine, Wheel wheel, String carName) {
-        this.engine = engine;
-        this.wheel = wheel;
-        this.carName = carName;
+    public int getYear() {
+        return year;
     }
 
-    public Engine getEngine() {
-        return engine;
+    public String getModel() {
+        return model;
     }
 
-    public void setEngine(Engine engine) {
-        this.engine = engine;
-    }
-
-    public Wheel getWheel() {
-        return wheel;
-    }
-
-    public void setWheel(Wheel wheel) {
-        this.wheel = wheel;
-    }
-
-    public String getCarName() {
-        return carName;
-    }
-
-    public void setCarName(String carName) {
-        this.carName = carName;
-    }
-    public String getInfo(){
-        return "Model: "+ carName +
-                " Engine -"+" {Vol-"+ engine.getEngineVol()+",Company:"+ engine.getCompanyName()+"}"+
-                " Wheel -"+" {Wheel size-"+wheel.getWheelSize()+",Company:"+wheel.getCompanyName()+"}";
-
-
+    public Car(int year, String model) {
+        this.year = year;
+        this.model = model;
 
     }
 }

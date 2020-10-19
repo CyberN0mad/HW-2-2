@@ -3,13 +3,26 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        BMW bmw =new BMW(new Engine(4,"BMW"),
-                new Wheel("250/SS","Das Auto"));
-        System.out.println(bmw.draw());
-        System.out.println(bmw.getInfo());
-        Lexus lexus = new Lexus(new Engine(4,"Toyota"),
-                new Wheel("265/CAONI","JapanWheels"));
-        System.out.println(lexus.draw());
-        System.out.println(lexus.getInfo());
+
+        createObject("BMW").print();
+        createObject("Mercedes").print();
+        createObject("Lexus").print();
     }
+
+    public static Printable createObject(String className) {
+        Printable printable = null;
+        switch (className) {
+            case "BMW":
+                Bmw bmw = new Bmw(2018, "X5", "Black");
+                return bmw;
+            case "Mercedes":
+                Mercedes mercedes = new Mercedes(2019, "AMG GLC43", "Germany");
+                return mercedes;
+            case "Lexus":
+                Lexus lexus = new Lexus(2016, "LX570", "Auto");
+                return lexus;
+        }
+        return printable;
+    }
+
 }
